@@ -9,5 +9,6 @@ namespace PerGamer.Service.Interface
     {
         List<CustomerResult> Get(string location);
         void InsertData(CustomerInput input);
+        CustomerResult SearchCustomer(CustomerInput input);
     }
 }

@@ -44,5 +44,17 @@ namespace PerGamer.Service.Implement
                 }
             }
         }
+
+        public CustomerResult SearchCustomer(CustomerInput input)
+        {
+            var customers = new CustomerResult();
+            using (var connection = new SqlConnection(connectionString))
+            {
+                customers = connection.QueryFirstOrDefault<CustomerResult>(@"
+                SELECT CustomerID,CustomerName,CustomerLastName,Location 
+                FROM Customer (nolock) WHERE  CustomerID = @CustomerID", new { CustomerID = input.CustomerID });
+            }
+            return customers;
+        }
     }
 }
