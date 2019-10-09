@@ -37,6 +37,7 @@ namespace PerGamer.Controllers.API
             };
         }
         public CustomerResult searchCustomer(CustomerInput input)
+
             => customerDatastore.SearchCustomer(input);
     }
 }
