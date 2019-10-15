@@ -23,11 +23,11 @@ namespace PerGamer.Controllers.API
         {
             return customerDatastore.Get(location);
         }
+
         [Route("api/customer/insertData")]
         [HttpPost]
         public ReturnData InsertData(CustomerInput input)
         {
-            //var result = new ReturnData();
             customerDatastore.InsertData(input);
             return new ReturnData
             {
@@ -36,8 +36,5 @@ namespace PerGamer.Controllers.API
                 ReturnMessage = "Success"
             };
         }
-        //public CustomerResult searchCustomer(CustomerInput input)
-
-        //    => customerDatastore.SearchCustomer(input);
     }
 }
