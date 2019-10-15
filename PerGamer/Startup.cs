@@ -41,6 +41,8 @@ namespace PerGamer
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json");
             var config = builder.Build();
             services.AddTransient<ICustomerDatastore>(m => new CustomerDatastore(config["ConnectionStrings:DefaultConnection"]));
+            services.AddTransient<IExchangeDatastore>(m => new ExchangeDatastore(config["ConnectionStrings:DefaultConnection"]));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
