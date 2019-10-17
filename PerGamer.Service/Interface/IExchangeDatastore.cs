@@ -8,5 +8,6 @@ namespace PerGamer.Service.Interface
     public interface IExchangeDatastore
     {
         List<ObjectDetail> getObjectDetailByObjectName(ObjectDetail input);
+        void insertDataFirebase(string name, string value);
     }
 }

@@ -16,14 +16,12 @@ namespace PerGamer.Controllers.API
         {
             this.customerDatastore = customerDatastore;
         }
-
         [Route("api/customer/getdata")]
         [HttpGet]
         public List<CustomerResult> GetData(string location)
         {
             return customerDatastore.Get(location);
         }
-
         [Route("api/customer/insertData")]
         [HttpPost]
         public ReturnData InsertData(CustomerInput input)
