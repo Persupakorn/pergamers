@@ -38,6 +38,7 @@ namespace PerGamer.Service.Implement
                 Name = name,
                 Value = value
             });
+            //per.supakorn@gmail.com
             var request = WebRequest.CreateHttp("https://pergamer-b6b14.firebaseio.com/.json");
             request.Method = "POST";
             request.ContentType = "application/json";
